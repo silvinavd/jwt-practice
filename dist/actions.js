@@ -85,6 +85,7 @@ var getUsers = function (req, res) { return __awaiter(void 0, void 0, void 0, fu
     });
 }); };
 exports.getUsers = getUsers;
+//controlador para el logueo
 var login = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var userRepo, user, token;
     return __generator(this, function (_a) {

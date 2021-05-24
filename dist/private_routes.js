@@ -42,13 +42,12 @@ var jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 var router = express_1.Router();
 //middleware de verificación
 var verifyToken = function (req, res, next) {
-    //headers
+    //headers con el token
     var token = req.header('Authorization');
     if (!token)
         return res.status(400).json('ACCESS DENIED');
     var decoded = jsonwebtoken_1["default"].verify(token, process.env.JWT_KEY);
     req.user = decoded;
-    console.log(decoded);
     next();
 };
 router.get('/user', verifyToken, utils_1.safe(actions.getUsers));
